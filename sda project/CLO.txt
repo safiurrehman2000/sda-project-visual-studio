@@ -1,0 +1,31 @@
+Programming Fundamentals
+variables
+if conditions
+for/while loops
+----
+OOP
+Inheritance
+Polymorphism
+Association
+Aggregation
+Composition
+----
+Data Structures
+Linklist
+Queues
+Stacks
+Hashing
+Graphs
+----
+Marketing Management
+Brand Equity
+Swot Analysis
+Brand Power
+----
+Psychology
+Neural Structure
+Mindhunter
+Alzheimer's Disease
+Autism
+
+
