@@ -6,50 +6,6 @@
 #include <string>
 using namespace std;
 
-//class PlO
-//{
-//public:
-//    string program;
-//
-//    void getCoursesByPlo(PlO) {}
-//};
-//
-
-//
-//
-
-//
-//class Programs
-//{
-//    void listAllCourses() {}
-//};
-//
-//class Quizzes
-//{
-//    int countQuestions(ClO id) {}
-//};
-//
-//class Assigments
-//{
-//    int countQuestions(ClO id) {}
-//};
-//
-//class Exams
-//{
-//    int countQuestions(ClO id) {}
-//};
-//
-//class Questions
-//{
-//    ClO clo;
-//};
-//
-//class Evaluation
-//{
-//public:
-//    void checkClOhasTested(ClO id) {}
-//};
-
 bool loginAO(string username, string password)
 {
     fstream fin("AOInfo.txt");
@@ -109,7 +65,7 @@ int main()
             cin >> p;
             user = AcademicOfficer(n, u, p);
         }
-        else if (b == 2) 
+        else if (b == 2)
         {
             cout << "Enter your username \n";
             cin >> u;
@@ -118,9 +74,25 @@ int main()
 
             if (loginAO(u, p))
             {
-                cout << "You are now logged in \n";
+                int a = 0;
+                cout << "You are now logged in \n \n";
+                cout << "Choose from the four options listed \n \n";
+                cout << "Press 1 to Manage Programs \n"
+                     << "Press 2 to Manage PLOs \n"
+                     << "Press 3 to Manage Courses \n"
+                     << "Press 4 to CLOs \n";
+                cin >> a;
+                if (a == 1)
+                {
+                    int b = 0;
+                    cout << "You chose to Manage Programs \n \n";
+                    cout << "Press 1 to Add Program \\n"
+                         << "Press 2 to Delete Program \\n"
+                         << "Press 3 to Update Program \\n";
+                }
             }
-            else cout << "Incorrect Details \n";
+            else
+                cout << "Incorrect Details \n";
         }
     }
 
@@ -147,10 +119,17 @@ int main()
 
             if (loginT(u, p))
             {
-                cout << "You are now logged in \n";
+                cout << "You are now logged in \n \n";
+                cout << "Choose from the four options listed \n \n";
+                cout << "Press 1 to Add covered topics against CLOs\n"
+                     << "Press 2 to Make Evaluations \n"
+                     << "Press 3 to Check if CLO tested \n"
+                     << "Press 4 to Check all CLOs are tested \n";
             }
-            else cout << "Incorrect Details \n";
+            else
+            {
+                cout << "Incorrect Details \n";
+            }
         }
     }
-    system("pause");
 }

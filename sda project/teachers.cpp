@@ -1,6 +1,7 @@
 #include <iostream>
 #include "users.cpp"
 #include <fstream>
+#include "Course.cpp"
 using namespace std;
 
 class Teacher : public Users
@@ -18,5 +19,4 @@ public:
     // bool checkAllCloHasBeenTested(Courses)
     // {
     // }
-
 };
