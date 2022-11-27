@@ -1,11 +1,10 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 using namespace std;
-#pragma once
 
-class Users
-{
-    public:
+class User {
+protected:
     string name;
     string username;
     string password;

@@ -18,10 +18,10 @@
     <ClCompile Include="AO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="teachers.cpp">
+    <ClCompile Include="Teacher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="users.cpp">
+    <ClCompile Include="User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
@@ -33,13 +33,7 @@
     <ClCompile Include="CLO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="topics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CLOS.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source1.cpp">
+    <ClCompile Include="Topic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Assignments.cpp">
@@ -55,9 +49,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Program.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Programs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Questions.cpp">
@@ -83,12 +74,18 @@
     <Text Include="programs.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="Data.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="PLO.text">
       <Filter>Source Files</Filter>
     </None>
     <None Include="Source">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Data.dat">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

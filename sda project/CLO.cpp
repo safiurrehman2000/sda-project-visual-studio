@@ -7,8 +7,7 @@ using namespace std;
 #include "Topic.cpp"
 #pragma once
 
-class CLO
-{
+class CLO {
 private:
     vector<Topic> topics;
     string outcome;

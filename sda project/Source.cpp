@@ -1,14 +1,16 @@
 #include <iostream>
 #include <fstream>
 #include "AO.cpp"
-#include "teachers.cpp"
+#include "Teacher.cpp"
 #include <string>
-#include "Programs.cpp"
+#include "Program.cpp"
 using namespace std;
+
+vector<Program> programs;
 
 bool loginAO(string username, string password)
 {
-    fstream fin("AOInfo.txt");
+    fstream fin("AO.txt");
     string word;
     string username1, password1;
     while (fin >> word)
@@ -42,13 +44,33 @@ bool loginT(string username, string password)
     return false;
 }
 
-int main()
-{
+void loadDataFromFile() {
+    ifstream file_obj;
+
+    file_obj.open("Data.txt", ios::in);
+
+    if (!file_obj) {
+        cout << "File not found!\n";
+        return;
+    }
+
+    Program program;
+
+    while (!file_obj.eof()) {
+        file_obj.read((char*)&program, sizeof(program));
+
+        programs.push_back(program);
+    }
+}
+
+int main() {
+    loadDataFromFile();
+
     int a = 0;
     int b = 0;
     string name = "";
     string username, password, confirmPassword;
-    Users user;
+    User user;
 
     cout << "Press 1 for academic officer or 2 for teacher: ";
 
@@ -113,7 +135,10 @@ int main()
                     cin >> b;
                     if (b == 1)
                     {
-                        // add program
+                        Program program = Program();
+                        program.add();
+
+                        programs.push_back(Program());
                     }
                     else if (b == 2)
                     {

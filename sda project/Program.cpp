@@ -1,18 +1,16 @@
+#pragma once
 #include <iostream>
 #include <vector>
-using namespace std;
-
+#include <fstream>
 #include "PLO.cpp"
 #include "Course.cpp"
-
-#pragma once
+using namespace std;
 
 class Program {
-
 private:
     string programName;
-    vector<PLO> plos;
-    vector<Course> courses;
+    //vector<PLO> plos;
+    //vector<Course> courses;
 
 protected:
     void setProgramName(string programName)
@@ -21,43 +19,49 @@ protected:
     };
 
 public:
-    Program() {
+    Program() {}
+
+    void add() {
         // Take PLOs from user.
 
-        string programName;
+        string programName = "";
         cout << "Please enter new program name: ";
         cin >> programName;
 
-        int temp;
-        cout << "How many PLOs do you want to enter: ";
-        cin >> temp;
+        //std::getline(cin, programName, '\n');
 
-        vector<PLO> plos;
-        for (int i = 0; i < temp; i++) {
-            plos.push_back(PLO());
-        }
+        //cin.clear();
+        //cin.ignore(INT_MAX, '\n');
+        //int temp = 0;
+        //cout << "How many PLOs do you want to enter: ";
+        //cin >> temp;
 
-        // Take courses from user.
-        temp = 0;
-        cout << "How many Courses do you want to enter: ";
-        cin >> temp;
+        //vector<PLO> plos;
+        //for (int i = 0; i < temp; i++) {
+        //    plos.push_back(PLO());
+        //}
 
-        vector<Course> courses;
-        for (int i = 0; i < temp; i++) {
-            courses.push_back(Course());
-        }
+        //// Take courses from user.
+        //temp = 0;
+        //cout << "How many Courses do you want to enter: ";
+        //cin >> temp;
+
+        //vector<Course> courses;
+        //for (int i = 0; i < temp; i++) {
+        //    courses.push_back(Course());
+        //}
 
         this->programName = programName;
-        this->plos = plos;
-        this->courses = courses;
-    }
+        //this->plos = plos;
+        //this->courses = courses;
 
-    bool operator==(const Program &obj)
-    {
-        Program temp;
-        bool flag1 = temp.plos == obj.plos;
-        bool flag2 = temp.courses == obj.courses;
-        return flag1 && flag2;
+        // Write out the program object to a file
+        ofstream file_obj;
+        file_obj.open("Data.txt", ios::app);
+
+        file_obj.write((char*)this, sizeof(this));
+
+        file_obj.close();
     }
 
     void listAllCourses() {}

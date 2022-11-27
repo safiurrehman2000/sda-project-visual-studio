@@ -1,10 +1,9 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
+#include "CLO.cpp"
 using namespace std;
-
-#include "CLO.cpp">
-#pragma once
 
 class Course {
 private:

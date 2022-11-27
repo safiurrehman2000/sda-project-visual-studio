@@ -1,16 +1,14 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "Users.cpp"
+#include "User.cpp"
 #include "Program.cpp"
 #include "Course.cpp"
 using namespace std;
 
-class AcademicOfficer : public Users, Program, Course
-{
-    public:
-    AcademicOfficer(string n, string u, string p)
-    {
+class AcademicOfficer : public User, Program, Course {
+public:
+    AcademicOfficer(string n, string u, string p) {
         cout << "Academic Officer default constructor called.\n";
         name = n;
         username = u;

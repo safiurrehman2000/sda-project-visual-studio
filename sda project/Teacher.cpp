@@ -1,11 +1,10 @@
 #include <iostream>
-#include "users.cpp"
 #include <fstream>
+#include "User.cpp"
 #include "Course.cpp"
 using namespace std;
 
-class Teacher : public Users
-{
+class Teacher : public User {
 public:
     Teacher(string n, string u, string p)
     {
@@ -16,6 +15,7 @@ public:
         fstream fin("TeacherInfo.txt", ios::app);
         fin << name << " " << username << " " << password << endl;
     }
+
     // bool checkAllCloHasBeenTested(Courses)
     // {
     // }
