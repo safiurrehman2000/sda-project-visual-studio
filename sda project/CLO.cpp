@@ -1,35 +1,35 @@
 #include <iostream>
-#include "topics.cpp"
 #include <string>
-#include <string.h>
 #include <fstream>
+#include <vector>
 using namespace std;
+
+#include "Topic.cpp"
+#pragma once
 
 class CLO
 {
+private:
+    vector<Topic> topics;
+    string outcome;
+
 public:
-    Topics * topics;
-    string courseName;
-  
-    CLO(string courseName, string topics[]) {
-        
-        this -> courseName = courseName;
-        this -> topics = new Topics[sizeof(topics)];
+    CLO() {
+        int temp = 0;
+        cout << "How many CLOs do you want to enter: ";
+        cin >> temp;
 
-        for (int i = 0; i < sizeof(topics); i++)
-        {
-            this->topics[i].topic = topics[i];
-            this->topics[i].isCovered = false;
+        vector<Topic> topics;
+        for (int i = 0; i < temp; i++) {
+            topics.push_back(Topic());
         }
 
-        fstream fin("CLO.txt", ios::app);
-        fin << this->courseName << "\n";
+        string outcome;
+        cout << "Enter CLO outome: ";
+        cin >> outcome;
 
-        for (int i = 0; i < sizeof(topics); i++)
-        {
-            fin << this->topics[i].topic << "\n";
-        }
-        cout << "----";
+        this->topics = topics;
+        this->outcome = outcome;
     }
 
     void getClO() 

@@ -39,6 +39,33 @@
     <ClCompile Include="CLOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignments.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Evaluations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PLO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Questions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Quizzes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="TeacherInfo.txt">
@@ -50,9 +77,18 @@
     <Text Include="CLO.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="AO.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="programs.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="PLO.text">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Source">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

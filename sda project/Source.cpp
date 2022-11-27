@@ -2,7 +2,6 @@
 #include <fstream>
 #include "AO.cpp"
 #include "teachers.cpp"
-#include <string.h>
 #include <string>
 #include "Programs.cpp"
 using namespace std;
@@ -47,33 +46,54 @@ int main()
 {
     int a = 0;
     int b = 0;
-    string n, u, p;
+    string name = "";
+    string username, password, confirmPassword;
     Users user;
 
-    cout << "press 1 for academic officer or 2 for teacher \n";
+    cout << "Press 1 for academic officer or 2 for teacher: ";
+
+    // Academic Officer
     cin >> a;
     if (a == 1)
     {
-        cout << "press 1 to signup or 2 to login \n";
+        cout << "Press 1 to signup or 2 for login: ";
         cin >> b;
         if (b == 1)
         {
-            cout << "what's your name? \n";
-            cin >> n;
-            cout << "enter your username \n";
-            cin >> u;
-            cout << "enter your password \n";
-            cin >> p;
-            user = AcademicOfficer(n, u, p);
+            cin.ignore();
+            cout << "Please enter your full name: ";
+            getline(cin, name, '\n');
+
+            cout << "Please enter a username: ";
+            cin >> username;
+
+            passwordsDontMatch:
+
+            cout << "Please enter a password: ";
+            cin >> password;
+
+            cout << "Please reenter your password: ";
+            cin >> confirmPassword;
+
+            if (password == confirmPassword) {
+                user = AcademicOfficer(name, username, password);
+                cout << "User successfully created, you are now logged in. \n";
+            }
+            else {
+                cout << "Error, passwords do not match. \n";
+            }
+
+            goto passwordsDontMatch;
         }
+        // Academic Officer Login
         else if (b == 2)
         {
             cout << "Enter your username \n";
-            cin >> u;
+            cin >> username;
             cout << "Enter your password \n";
-            cin >> p;
+            cin >> password;
 
-            if (loginAO(u, p))
+            if (loginAO(username, password))
             {
                 int a = 0;
                 cout << "You are now logged in \n \n";
@@ -149,7 +169,7 @@ int main()
                 cout << "Incorrect Details \n";
         }
     }
-
+    // Teacher Admin Panel
     else if (a == 2)
     {
         cout << "Press 1 to signup or 2 to login \n";
@@ -157,21 +177,22 @@ int main()
         if (b == 1)
         {
             cout << "what's your name? \n";
-            cin >> n;
+            cin >> name;
             cout << "enter your username \n";
-            cin >> u;
+            cin >> username;
             cout << "enter your password \n";
-            cin >> p;
-            user = Teacher(n, u, p);
+            cin >> password;
+            user = Teacher(name, username, password);
         }
+        // Teacher Login
         else if (b == 2)
         {
             cout << "Enter your username \n";
-            cin >> u;
+            cin >> username;
             cout << "Enter your password \n";
-            cin >> p;
+            cin >> password;
 
-            if (loginT(u, p))
+            if (loginT(username, password))
             {
                 cout << "You are now logged in \n \n";
                 cout << "Choose from the four options listed \n \n";

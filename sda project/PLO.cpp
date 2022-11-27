@@ -9,5 +9,23 @@ private:
     string outcome;
 
 public:
+    PLO() {
+        string description = "";
+        cout << "Enter PLO description: ";
+        cin >> description;
+
+        string outcome = "";
+        cout << "Enter PLO outcome: ";
+        cin >> outcome;
+
+        this->description = description;
+        this->outcome = outcome;
+    }
+
+    PLO(string description, string outcome) {
+        this->description = description;
+        this->outcome = outcome;
+    };
+
     void getCoursesByPlo(PLO) {}
 };

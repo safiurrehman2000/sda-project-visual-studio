@@ -128,21 +128,33 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AO.cpp" />
+    <ClCompile Include="Assignments.cpp" />
     <ClCompile Include="CLO.cpp" />
     <ClCompile Include="CLOS.cpp" />
     <ClCompile Include="Course.cpp" />
+    <ClCompile Include="Evaluations.cpp" />
+    <ClCompile Include="Exams.cpp" />
+    <ClCompile Include="PLO.cpp" />
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Programs.cpp" />
+    <ClCompile Include="Questions.cpp" />
+    <ClCompile Include="Quizzes.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Source1.cpp" />
     <ClCompile Include="teachers.cpp" />
     <ClCompile Include="topics.cpp" />
     <ClCompile Include="users.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="AO.txt" />
     <Text Include="AOInfo.txt" />
     <Text Include="CLO.txt" />
+    <Text Include="programs.txt" />
     <Text Include="TeacherInfo.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PLO.text" />
+    <None Include="Source" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

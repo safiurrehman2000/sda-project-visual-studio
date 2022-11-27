@@ -1,0 +1,193 @@
+CCCC_Module@AcademicOfficer@class@
+CCCC_ModExt@AcademicOfficer@class@AO.cpp@9@definition@F???0@LOC:3 COM:0 MVG:0@0@d@
+CCCC_Module@Assignments@class@
+CCCC_ModExt@Assignments@class@Assignments.cpp@7@definition@F???0@LOC:6 COM:0 MVG:0@0@d@
+CCCC_Module@CLO@class@
+CCCC_ModExt@CLO@class@CLO.cpp@8@definition@F???2@LOC:5 COM:0 MVG:0@2@d@
+CCCC_Module@CLOS@class@
+CCCC_ModExt@CLOS@class@CLOS.cpp@8@definition@F???2@LOC:4 COM:0 MVG:0@2@d@
+CCCC_Module@Course@class@
+CCCC_ModExt@Course@class@Course.cpp@7@definition@F???2@LOC:6 COM:0 MVG:0@2@d@
+CCCC_Module@Evaluation@class@
+CCCC_ModExt@Evaluation@class@Evaluations.cpp@5@definition@F???2@LOC:3 COM:0 MVG:0@2@d@
+CCCC_Module@Exams@class@
+CCCC_ModExt@Exams@class@Exams.cpp@7@definition@F???0@LOC:5 COM:0 MVG:0@0@d@
+CCCC_Module@PLO@class@
+CCCC_ModExt@PLO@class@PLO.cpp@5@definition@F???2@LOC:7 COM:0 MVG:0@2@d@
+CCCC_Module@Program@class@
+CCCC_ModExt@Program@class@Program.cpp@10@definition@F???2@LOC:8 COM:0 MVG:0@2@d@
+CCCC_Module@Programs@class@
+CCCC_ModExt@Programs@class@Programs.cpp@7@definition@F???0@LOC:5 COM:0 MVG:0@0@d@
+CCCC_Module@Questions@class@
+CCCC_ModExt@Questions@class@Questions.cpp@4@definition@????2@LOC:3 COM:0 MVG:0@2@d@
+CCCC_Module@Quizzes@class@
+CCCC_ModExt@Quizzes@class@Quizzes.cpp@7@definition@F???0@LOC:5 COM:0 MVG:0@0@d@
+CCCC_Module@Teacher@class@
+CCCC_ModExt@Teacher@class@teachers.cpp@7@definition@F???0@LOC:4 COM:3 MVG:0@0@d@
+CCCC_Module@Topics@class@
+CCCC_ModExt@Topics@class@topics.cpp@5@definition@????2@LOC:5 COM:0 MVG:0@2@d@
+CCCC_Module@Users@class@
+CCCC_ModExt@Users@class@Users.cpp@6@definition@????2@LOC:6 COM:0 MVG:0@2@d@
+CCCC_Module@anonymous@@
+CCCC_Module@bool@@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@string@@
+CCCC_Module@vector@@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Member@AcademicOfficer@AcademicOfficer@@(string,string,string)@
+CCCC_MemExt@AcademicOfficer@AcademicOfficer@@(string,string,string)@AO.cpp@12@definition@F???0@LOC:11 COM:0 MVG:0@0@d@
+CCCC_Member@Assignments@countQuestions@@(CLO)@
+CCCC_MemExt@Assignments@countQuestions@@(CLO)@Assignments.cpp@13@definition@F???0@LOC:1 COM:0 MVG:0@0@d@
+CCCC_Member@CLO@CLO@@(...)@
+CCCC_MemExt@CLO@CLO@@(...)@CLO.cpp@14@definition@F???0@LOC:16 COM:0 MVG:2@0@d@
+CCCC_Member@CLO@getClO@@()@
+CCCC_MemExt@CLO@getClO@@()@CLO.cpp@35@definition@F???0@LOC:3 COM:0 MVG:0@0@d@
+CCCC_Member@CLOS@CLOS@@()@
+CCCC_MemExt@CLOS@CLOS@@()@CLOS.cpp@13@definition@F???0@LOC:9 COM:0 MVG:1@0@d@
+CCCC_Member@Course@Course@@(string,string,string)@
+CCCC_MemExt@Course@Course@@(string,string,string)@Course.cpp@14@definition@F???1@LOC:5 COM:0 MVG:0@1@d@
+CCCC_Member@Course@setCLO@@(string)@
+CCCC_MemExt@Course@setCLO@@(string)@Course.cpp@28@definition@F???1@LOC:3 COM:0 MVG:0@1@d@
+CCCC_Member@Course@setCourseCode@@(string)@
+CCCC_MemExt@Course@setCourseCode@@(string)@Course.cpp@24@definition@F???1@LOC:3 COM:0 MVG:0@1@d@
+CCCC_Member@Course@setTitle@@(string)@
+CCCC_MemExt@Course@setTitle@@(string)@Course.cpp@20@definition@F???1@LOC:3 COM:0 MVG:0@1@d@
+CCCC_Member@Evaluation@checkClOhasTested@@(CLO)@
+CCCC_MemExt@Evaluation@checkClOhasTested@@(CLO)@Evaluations.cpp@8@definition@F???0@LOC:1 COM:0 MVG:0@0@d@
+CCCC_Member@Exams@countQuestions@@(CLO)@
+CCCC_MemExt@Exams@countQuestions@@(CLO)@Exams.cpp@13@definition@F???0@LOC:1 COM:0 MVG:0@0@d@
+CCCC_Member@PLO@PLO@@()@
+CCCC_MemExt@PLO@PLO@@()@PLO.cpp@12@definition@F???0@LOC:10 COM:0 MVG:0@0@d@
+CCCC_Member@PLO@PLO@@(string,string)@
+CCCC_MemExt@PLO@PLO@@(string,string)@PLO.cpp@25@definition@F???0@LOC:3 COM:0 MVG:0@0@d@
+CCCC_Member@PLO@getCoursesByPlo@@(PLO)@
+CCCC_MemExt@PLO@getCoursesByPlo@@(PLO)@PLO.cpp@30@definition@F???0@LOC:1 COM:0 MVG:0@0@d@
+CCCC_Member@Program@Program@@()@
+CCCC_MemExt@Program@Program@@()@Program.cpp@24@definition@F???0@LOC:28 COM:2 MVG:2@0@d@
+CCCC_Member@Program@listAllCourses@@()@
+CCCC_MemExt@Program@listAllCourses@@()@Program.cpp@71@definition@F???0@LOC:1 COM:0 MVG:0@0@d@
+CCCC_Member@Program@operator ==@@(const Program &)@
+CCCC_MemExt@Program@operator ==@@(const Program &)@Program.cpp@63@definition@F???0@LOC:7 COM:0 MVG:2@0@d@
+CCCC_Member@Program@setProgramName@@(string)@
+CCCC_MemExt@Program@setProgramName@@(string)@Program.cpp@18@definition@F???1@LOC:3 COM:0 MVG:0@1@d@
+CCCC_Member@Programs@addProgram@@(Program)@
+CCCC_MemExt@Programs@addProgram@@(Program)@Programs.cpp@13@definition@F???1@LOC:6 COM:1 MVG:0@1@d@
+CCCC_Member@Programs@deleteProgram@@(Program)@
+CCCC_MemExt@Programs@deleteProgram@@(Program)@Programs.cpp@20@definition@F???1@LOC:10 COM:0 MVG:2@1@d@
+CCCC_Member@Quizzes@countQuestions@@(CLO)@
+CCCC_MemExt@Quizzes@countQuestions@@(CLO)@Quizzes.cpp@13@definition@F???0@LOC:1 COM:0 MVG:0@0@d@
+CCCC_Member@Teacher@Teacher@@(string,string,string)@
+CCCC_MemExt@Teacher@Teacher@@(string,string,string)@teachers.cpp@10@definition@F???0@LOC:8 COM:0 MVG:0@0@d@
+CCCC_Member@anonymous@loginAO@@(string,string)@
+CCCC_MemExt@anonymous@loginAO@@(string,string)@Source.cpp@9@definition@F????@LOC:16 COM:0 MVG:5@?@d@
+CCCC_Member@anonymous@loginT@@(string,string)@
+CCCC_MemExt@anonymous@loginT@@(string,string)@Source.cpp@27@definition@F????@LOC:16 COM:0 MVG:5@?@d@
+CCCC_Member@anonymous@main@@()@
+CCCC_MemExt@anonymous@main@@()@Source.cpp@45@definition@F????@LOC:141 COM:11 MVG:19@?@d@
+CCCC_UseRel@Course@AcademicOfficer@
+CCCC_UseExt@Course@AcademicOfficer@AO.cpp@9@inheritance@????0@*@0@I@
+CCCC_UseRel@Program@AcademicOfficer@
+CCCC_UseExt@Program@AcademicOfficer@AO.cpp@9@inheritance@????0@*@0@I@
+CCCC_UseRel@Users@AcademicOfficer@
+CCCC_UseExt@Users@AcademicOfficer@AO.cpp@9@inheritance@????0@*@0@I@
+CCCC_UseRel@string@AcademicOfficer@
+CCCC_UseExt@string@AcademicOfficer@AO.cpp@12@pass by value@F???0@*@0@P@
+CCCC_UseExt@string@AcademicOfficer@AO.cpp@12@pass by value@F???0@*@0@P@
+CCCC_UseExt@string@AcademicOfficer@AO.cpp@12@pass by value@F???0@*@0@P@
+CCCC_UseRel@CLO@Assignments@
+CCCC_UseExt@CLO@Assignments@Assignments.cpp@13@pass by value@F???0@*@0@P@
+CCCC_UseRel@Evaluation@Assignments@
+CCCC_UseExt@Evaluation@Assignments@Assignments.cpp@7@inheritance@????0@*@0@I@
+CCCC_UseRel@Questions@Assignments@
+CCCC_UseExt@Questions@Assignments@Assignments.cpp@10@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@Topics@CLO@
+CCCC_UseExt@Topics@CLO@CLO.cpp@11@has by reference@????0@LOC:0 COM:0 MVG:0@0@h@
+CCCC_UseRel@string@CLO@
+CCCC_UseExt@string@CLO@CLO.cpp@12@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseRel@CLO@CLOS@
+CCCC_UseExt@CLO@CLOS@CLOS.cpp@11@has by reference@????0@LOC:0 COM:0 MVG:0@0@h@
+CCCC_UseRel@CLO@Course@
+CCCC_UseExt@CLO@Course@Course.cpp@11@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@string@Course@
+CCCC_UseExt@string@Course@Course.cpp@9@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@string@Course@Course.cpp@10@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@string@Course@Course.cpp@14@pass by value@F???1@*@1@P@
+CCCC_UseExt@string@Course@Course.cpp@14@pass by value@F???1@*@1@P@
+CCCC_UseExt@string@Course@Course.cpp@14@pass by value@F???1@*@1@P@
+CCCC_UseExt@string@Course@Course.cpp@20@pass by value@F???1@*@1@P@
+CCCC_UseExt@string@Course@Course.cpp@24@pass by value@F???1@*@1@P@
+CCCC_UseExt@string@Course@Course.cpp@28@pass by value@F???1@*@1@P@
+CCCC_UseRel@CLO@Evaluation@
+CCCC_UseExt@CLO@Evaluation@Evaluations.cpp@8@pass by value@F???0@*@0@P@
+CCCC_UseRel@CLO@Exams@
+CCCC_UseExt@CLO@Exams@Exams.cpp@13@pass by value@F???0@*@0@P@
+CCCC_UseRel@Evaluation@Exams@
+CCCC_UseExt@Evaluation@Exams@Exams.cpp@7@inheritance@????0@*@0@I@
+CCCC_UseRel@Questions@Exams@
+CCCC_UseExt@Questions@Exams@Exams.cpp@10@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@string@PLO@
+CCCC_UseExt@string@PLO@PLO.cpp@8@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@string@PLO@PLO.cpp@9@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@string@PLO@PLO.cpp@25@pass by value@F???0@*@0@P@
+CCCC_UseExt@string@PLO@PLO.cpp@25@pass by value@F???0@*@0@P@
+CCCC_UseRel@string@Program@
+CCCC_UseExt@string@Program@Program.cpp@15@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@string@Program@Program.cpp@18@pass by value@F???1@*@1@P@
+CCCC_UseRel@vector@Program@
+CCCC_UseExt@vector@Program@Program.cpp@13@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@vector@Program@Program.cpp@14@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@Program@Programs@
+CCCC_UseExt@Program@Programs@Programs.cpp@7@inheritance@????0@*@0@I@
+CCCC_UseExt@Program@Programs@Programs.cpp@13@pass by value@F???1@*@1@P@
+CCCC_UseExt@Program@Programs@Programs.cpp@20@pass by value@F???1@*@1@P@
+CCCC_UseRel@vector@Programs@
+CCCC_UseExt@vector@Programs@Programs.cpp@10@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@CLO@Questions@
+CCCC_UseExt@CLO@Questions@Questions.cpp@6@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@CLO@Quizzes@
+CCCC_UseExt@CLO@Quizzes@Quizzes.cpp@13@pass by value@F???0@*@0@P@
+CCCC_UseRel@Evaluation@Quizzes@
+CCCC_UseExt@Evaluation@Quizzes@Quizzes.cpp@7@inheritance@????0@*@0@I@
+CCCC_UseRel@Questions@Quizzes@
+CCCC_UseExt@Questions@Quizzes@Quizzes.cpp@10@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@Users@Teacher@
+CCCC_UseExt@Users@Teacher@teachers.cpp@7@inheritance@????0@*@0@I@
+CCCC_UseRel@string@Teacher@
+CCCC_UseExt@string@Teacher@teachers.cpp@10@pass by value@F???0@*@0@P@
+CCCC_UseExt@string@Teacher@teachers.cpp@10@pass by value@F???0@*@0@P@
+CCCC_UseExt@string@Teacher@teachers.cpp@10@pass by value@F???0@*@0@P@
+CCCC_UseRel@bool@Topics@
+CCCC_UseExt@bool@Topics@topics.cpp@9@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseRel@string@Topics@
+CCCC_UseExt@string@Topics@topics.cpp@8@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseRel@string@Users@
+CCCC_UseExt@string@Users@Users.cpp@9@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@string@Users@Users.cpp@10@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@string@Users@Users.cpp@11@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_RejExt@AO.cpp@1@<file scope items>@F???0@LOC:1 COM:0 MVG:0@0@r@
+CCCC_RejExt@Assignments.cpp@1@<file scope items>@F???0@LOC:2 COM:0 MVG:0@0@r@
+CCCC_RejExt@CLO.cpp@1@<file scope items>@F???2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@CLOS.cpp@1@<file scope items>@F???2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@Course.cpp@1@<file scope items>@F???2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@Evaluations.cpp@1@<file scope items>@F???2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@Exams.cpp@1@<file scope items>@F???0@LOC:2 COM:0 MVG:0@0@r@
+CCCC_RejExt@PLO.cpp@1@<file scope items>@F???2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@Program.cpp@1@<file scope items>@F???2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@Programs.cpp@1@<file scope items>@F???0@LOC:2 COM:0 MVG:0@0@r@
+CCCC_RejExt@Questions.cpp@1@<file scope items>@????2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@Quizzes.cpp@1@<file scope items>@F???0@LOC:2 COM:0 MVG:0@0@r@
+CCCC_RejExt@Source.cpp@1@<file scope items>@F????@LOC:2 COM:0 MVG:0@?@r@
+CCCC_RejExt@Source1.cpp@1@<file scope items>@?????@LOC:0 COM:0 MVG:0@?@r@
+CCCC_RejExt@teachers.cpp@1@<file scope items>@F???0@LOC:2 COM:0 MVG:0@0@r@
+CCCC_RejExt@topics.cpp@1@<file scope items>@????2@LOC:2 COM:0 MVG:0@2@r@
+CCCC_RejExt@Users.cpp@1@<file scope items>@????2@LOC:2 COM:0 MVG:0@2@r@
