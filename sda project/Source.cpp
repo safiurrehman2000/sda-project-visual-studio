@@ -89,6 +89,59 @@ int main()
                     cout << "Press 1 to Add Program \\n"
                          << "Press 2 to Delete Program \\n"
                          << "Press 3 to Update Program \\n";
+                    cin >> b;
+                    if (b == 1)
+                    {
+                        // add program
+                    }
+                    else if (b == 2)
+                    {
+                        // delete program
+                    }
+                    else if (b == 3)
+                    {
+                        // update program
+                        // update PLO
+                    }
+                    else
+                    {
+                        cout << "Incorrect number entered";
+                    }
+                }
+                else if (a == 2)
+                {
+                    // check satisfied PLO
+                }
+                else if (a == 3)
+                {
+                    int b = 0;
+                    cout << "You selected Manage Courses \n \n"
+                         << "Press 1 to Add Courses \n"
+                         << "Press 2 to Delete Courses \n"
+                         << "Press 3 to Update Courses \n"
+                         << "Press 4 to List Courses for PLO \n";
+                    cin >> b;
+                    if (b == 1)
+                    {
+                        // add course
+                    }
+                    else if (b == 2)
+                    {
+                        // delete course
+                    }
+                    else if (b == 3)
+                    {
+                        // update courses
+                        // update clos
+                    }
+                    else if (b == 4)
+                    {
+                        // list courses for PLO
+                    }
+                    else
+                    {
+                        cout << "incorrect option";
+                    }
                 }
             }
             else
