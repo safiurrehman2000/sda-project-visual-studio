@@ -2,6 +2,7 @@
 #include "PLO.cpp"
 #include "Course.cpp"
 using namespace std;
+#pragma once
 class Program
 {
 private:

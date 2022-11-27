@@ -1,3 +1,6 @@
+#ifndef __FURNITURE_H__
+#define __FURNITURE_H__
+#pragma once
 #include <iostream>
 #include <string.h>
 #include <string>
@@ -24,3 +27,5 @@ protected:
         this->clo = clo;
     }
 };
+
+#endif
