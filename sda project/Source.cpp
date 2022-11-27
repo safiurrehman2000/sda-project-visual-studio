@@ -44,26 +44,30 @@ bool loginT(string username, string password)
     return false;
 }
 
-void loadDataFromFile() {
+void loadDataFromFile()
+{
     ifstream file_obj;
 
     file_obj.open("Data.txt", ios::in);
 
-    if (!file_obj) {
+    if (!file_obj)
+    {
         cout << "File not found!\n";
         return;
     }
 
     Program program;
 
-    while (!file_obj.eof()) {
-        file_obj.read((char*)&program, sizeof(program));
+    while (!file_obj.eof())
+    {
+        file_obj.read((char *)&program, sizeof(program));
 
         programs.push_back(program);
     }
 }
 
-int main() {
+int main()
+{
     loadDataFromFile();
 
     int a = 0;
@@ -89,20 +93,21 @@ int main() {
             cout << "Please enter a username: ";
             cin >> username;
 
-            passwordsDontMatch:
-
+        passwordsDontMatch:
             cout << "Please enter a password: ";
             cin >> password;
 
             cout << "Please reenter your password: ";
             cin >> confirmPassword;
 
-            if (password == confirmPassword) {
+            if (password == confirmPassword)
+            {
                 user = AcademicOfficer(name, username, password);
                 cout << "User successfully created, you are now logged in. \n";
             }
-            else {
-                cout << "Error, passwords do not match. \n";
+            else
+            {
+                cout << "Error, passw1ords do not match. \n";
             }
 
             goto passwordsDontMatch;
