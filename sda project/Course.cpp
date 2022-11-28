@@ -5,23 +5,27 @@
 #include "CLO.cpp"
 using namespace std;
 
-class Course {
+class Course
+{
 private:
     string title;
     string courseCode;
     vector<CLO> clos;
 
 protected:
-    void setTitle(string title) {
+    void setTitle(string title)
+    {
         this->title = title;
     }
 
-    void setCourseCode(string courseCode) {
+    void setCourseCode(string courseCode)
+    {
         this->courseCode = courseCode;
     }
 
 public:
-    Course() {
+    Course()
+    {
         string title = "";
         cout << "Enter course title: ";
         cin >> title;
@@ -31,11 +35,12 @@ public:
         cin >> courseCode;
 
         int temp = 0;
-        cout << "How many ClOs do you want to enter: ";
+        cout << "How many CLOs do you want to enter: ";
         cin >> temp;
 
         vector<CLO> clos;
-        for (int i = 0; i < temp; i++) {
+        for (int i = 0; i < temp; i++)
+        {
             clos.push_back(CLO());
         }
 
@@ -44,9 +49,24 @@ public:
         this->clos = clos;
     }
 
-    Course(string title, string courseCode, vector<CLO> clos) {
+    Course(string title, string courseCode, vector<CLO> clos)
+    {
         this->title = title;
         this->courseCode = courseCode;
         this->clos = clos;
+    }
+
+    void print()
+    {
+        cout << "Title: " << title << endl;
+        cout << "Course Code: " << courseCode << endl;
+
+        for (int i = 0; i < clos.size(); i++)
+        {
+            cout << "CLO " << i + 1 << ": " << endl;
+            clos[i].print();
+        }
+
+        cout << endl;
     }
 };

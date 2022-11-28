@@ -9,7 +9,8 @@ private:
     string outcome;
 
 public:
-    PLO() {
+    PLO()
+    {
         string description = "";
         cout << "Enter PLO description: ";
         cin >> description;
@@ -22,10 +23,18 @@ public:
         this->outcome = outcome;
     }
 
-    PLO(string description, string outcome) {
+    PLO(string description, string outcome)
+    {
         this->description = description;
         this->outcome = outcome;
     };
+
+    void print()
+    {
+        cout << "Description: " << description << endl;
+        cout << "Outcome: " << outcome << endl
+             << endl;
+    }
 
     void getCoursesByPlo(PLO) {}
 };

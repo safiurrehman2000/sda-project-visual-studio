@@ -63,6 +63,8 @@ void loadDataFromFile()
         file_obj.read((char *)&program, sizeof(program));
 
         programs.push_back(program);
+
+        program.print();
     }
 }
 

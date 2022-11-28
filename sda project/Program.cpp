@@ -30,7 +30,7 @@ public:
         cout << "Please enter new program name: ";
         cin.ignore();
         std::getline(cin, programName, '\n');
-        
+
         int temp = 0;
         cout << "How many PLOs do you want to enter: ";
         cin >> temp;
@@ -60,9 +60,28 @@ public:
         ofstream file_obj;
         file_obj.open("Data.txt", ios::app);
 
-        file_obj.write((char *)this, sizeof(this));
+        file_obj.write((char *)this, sizeof(*this));
 
         file_obj.close();
+    }
+
+    void print()
+    {
+        cout << "Program Name: " << programName << endl;
+
+        for (int i = 0; plos.size(); i++)
+        {
+            cout << "PLO " << i + 1 << ": " << endl;
+            plos[i].print();
+        }
+
+        cout << endl;
+
+        for (int i = 0; courses.size(); i++)
+        {
+            cout << "Course " << i + 1 << ": " << endl;
+            courses[i].print();
+        }
     }
 
     void listAllCourses() {}

@@ -7,19 +7,22 @@ using namespace std;
 #include "Topic.cpp"
 #pragma once
 
-class CLO {
+class CLO
+{
 private:
     vector<Topic> topics;
     string outcome;
 
 public:
-    CLO() {
+    CLO()
+    {
         int temp = 0;
-        cout << "How many CLOs do you want to enter: ";
+        cout << "How many Topics do you want to enter: ";
         cin >> temp;
 
         vector<Topic> topics;
-        for (int i = 0; i < temp; i++) {
+        for (int i = 0; i < temp; i++)
+        {
             topics.push_back(Topic());
         }
 
@@ -31,8 +34,18 @@ public:
         this->outcome = outcome;
     }
 
-    void getClO() 
+    void print()
     {
+        cout << "Outcome: " << outcome << outcome;
 
+        for (int i = 0; i < topics.size(); i++)
+        {
+            cout << "Topic " << i + 1 << ": " << endl;
+            topics[i].print();
+        }
+    }
+
+    void getClO()
+    {
     }
 };
