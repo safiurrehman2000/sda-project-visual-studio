@@ -71,10 +71,10 @@
     <Text Include="AO.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="programs.txt">
+    <Text Include="Data.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="Data.txt">
+    <Text Include="Programs.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>

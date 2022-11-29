@@ -6,7 +6,9 @@
 #include "Program.cpp"
 using namespace std;
 
+string programsFile = "Programs.txt";
 vector<Program> programs;
+
 
 bool loginAO(string username, string password)
 {
@@ -46,25 +48,18 @@ bool loginT(string username, string password)
 
 void loadDataFromFile()
 {
-    ifstream file_obj;
+    ifstream fin;
 
-    file_obj.open("Data.txt", ios::in);
+    fin.open(programsFile, ios::in);
 
-    if (!file_obj)
-    {
-        cout << "File not found!\n";
-        return;
-    }
+    while (!fin.eof()) {
+        string temp;
+        getline(fin, temp);
+        Program program;
 
-    Program program;
-
-    while (!file_obj.eof())
-    {
-        file_obj.read((char *)&program, sizeof(program));
-
-        programs.push_back(program);
-
+        program.takeInputFromString(temp);
         program.print();
+        programs.push_back(program);
     }
 }
 
@@ -78,13 +73,13 @@ int main()
     string username, password, confirmPassword;
     User user;
 
-    cout << "Press 1 for academic officer or 2 for teacher: ";
+    cout << "Enter 1 for academic officer or 2 for teacher: ";
 
     // Academic Officer
     cin >> a;
     if (a == 1)
     {
-        cout << "Press 1 to signup or 2 for login: ";
+        cout << "Enter 1 to signup or 2 for login: ";
         cin >> b;
         if (b == 1)
         {
@@ -109,7 +104,7 @@ int main()
             }
             else
             {
-                cout << "Error, passw1ords do not match. \n";
+                cout << "Error, passwords do not match. \n";
             }
 
             goto passwordsDontMatch;
@@ -117,35 +112,44 @@ int main()
         // Academic Officer Login
         else if (b == 2)
         {
-            cout << "Enter your username \n";
+        wrongCredentials:
+
+            cout << "Enter your username: ";
             cin >> username;
-            cout << "Enter your password \n";
+            cout << "Enter your password: ";
             cin >> password;
 
             if (loginAO(username, password))
             {
                 int a = 0;
-                cout << "You are now logged in \n \n";
-                cout << "Choose from the four options listed \n \n";
-                cout << "Press 1 to Manage Programs \n"
-                     << "Press 2 to Manage PLOs \n"
-                     << "Press 3 to Manage Courses \n"
-                     << "Press 4 to CLOs \n";
+                cout << "You are now logged in. \n\n";
+                aoAdminPanel:
+                cout << "Choose from the four options listed below: \n\n";
+                cout << "Enter 1 to Manage Programs.\n"
+                     << "Enter 2 to Manage PLOs.\n"
+                     << "Enter 3 to Manage Courses.\n"
+                     << "Enter 4 to CLOs.\n\n";
                 cin >> a;
+                cout << "\n";
                 if (a == 1)
                 {
                     int b = 0;
-                    cout << "You chose to Manage Programs \n \n";
-                    cout << "Press 1 to Add Program \\n"
-                         << "Press 2 to Delete Program \\n"
-                         << "Press 3 to Update Program \\n";
+                    cout << "You chose to Manage Programs.\n\n";
+                    cout << "Enter 1 to Add Program.\n"
+                         << "Enter 2 to Delete Program.\n"
+                         << "Enter 3 to Update Program.\n\n";
                     cin >> b;
+                    cout << "\n";
                     if (b == 1)
                     {
+                        cout << "You chose to Add Program.\n\n";
                         Program program = Program();
-                        program.add();
+                        program.takeInput();
+                        program.writeToFile();
 
-                        programs.push_back(Program());
+                        programs.push_back(program);
+
+                        goto aoAdminPanel;
                     }
                     else if (b == 2)
                     {
@@ -196,9 +200,15 @@ int main()
                         cout << "incorrect option";
                     }
                 }
+                else {
+                    cout << "No option exists for that input, try again.\n";
+                }
+                goto aoAdminPanel;
             }
-            else
-                cout << "Incorrect Details \n";
+            else {
+                cout << "No account exists with those credentials, try again.\n";
+                goto wrongCredentials;
+            }
         }
     }
     // Teacher Admin Panel

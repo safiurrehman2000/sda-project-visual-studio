@@ -147,7 +147,7 @@
     <Text Include="AOInfo.txt" />
     <Text Include="CLO.txt" />
     <Text Include="Data.txt" />
-    <Text Include="programs.txt" />
+    <Text Include="Programs.txt" />
     <Text Include="TeacherInfo.txt" />
   </ItemGroup>
   <ItemGroup>
