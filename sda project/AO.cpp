@@ -10,9 +10,10 @@ class AcademicOfficer : public User, Program, Course
 {
 private:
     const string fileName = "AO.txt";
- 
+
 public:
-    AcademicOfficer() {
+    AcademicOfficer()
+    {
         name = "";
         username = "";
         password = "";
@@ -27,35 +28,36 @@ public:
         cin.ignore();
         std::getline(cin, name, '\n');
 
-        string username = "";
+    enterUniqueUsername:
+
+        string username;
         cout << "Please enter a username: ";
-        cin.clear();
-        cin.sync();
-        std::getline(cin, username, '\n');
+        cin >> username;
 
-        passwordsDontMatch:
+    passwordsDontMatch:
 
-        string password = "";
+        string password;
         cout << "Please enter a password: ";
-        cin.clear();
-        cin.sync();
-        std::getline(cin, username, '\n');
+        cin >> password;
 
-        string confirmPassword = "";
+        string confirmPassword;
         cout << "Please reenter your password: ";
-        cin.clear();
-        cin.sync();
-        std::getline(cin, confirmPassword, '\n');
+        cin >> confirmPassword;
 
         if (password == confirmPassword)
         {
-            this->name = name;
-            this->username = username;
-            this->password = password;
-
-            if (!checkDuplicate())
-            writeToFile();
-            cout << "User successfully created, you are now logged in. \n";
+            if (!checkDuplicate(username))
+            {
+                this->name = name;
+                this->username = username;
+                this->password = password;
+                writeToFile();
+                cout << "User successfully created, you are now logged in. \n";
+            }
+            else
+            {
+                goto enterUniqueUsername;
+            }
         }
         else
         {
@@ -64,20 +66,11 @@ public:
         }
     }
 
-    void writeToFile() {
-
-    }
-
-    AcademicOfficer(string name, string username, string password)
+    AcademicOfficer takeInputFromString(string data)
     {
-        ifstream fin;
-        fin.open("AO.txt", ios::in);
+        AcademicOfficer academicOfficer;
 
-        string data;
-        getline(fin, data);
-
-
-        // traversing the name
+        string name = "";
         int i = 0;
         for (; i < data.length(); i++)
         {
@@ -85,11 +78,14 @@ public:
             {
                 break;
             }
+            else
+            {
+                name += data[i];
+            }
         }
 
         i++;
 
-        // traversing and saving the username
         string username = "";
         for (; i < data.length(); i++)
         {
@@ -103,23 +99,123 @@ public:
             }
         }
 
-        if (!checkDuplicate(fin, username)) {
-            ofstream fout;
-            fin.open("AO.txt", ios::out);
+        i++;
 
-            this->name = n;
-            this->username = u;
-            this->password = p;
-
-            fout << name << "~" << username << "~" << password << endl;
-
-            fout.close();
+        string password = "";
+        for (; i < data.length(); i++)
+        {
+            if (data[i] == '\n')
+            {
+                break;
+            }
+            else
+            {
+                username += data[i];
+            }
         }
+
+        academicOfficer.name = name;
+        academicOfficer.username = username;
+        academicOfficer.password = password;
+
+        return academicOfficer;
     }
 
-    bool checkDuplicate(std::ifstream &fin, string username)
+    void writeToFile()
     {
+        ofstream fout;
+        fout.open(fileName, ios::app);
+
+        fout << name << "~" << username << '~' << password << endl;
+
+        fout.close();
+    }
+
+    void login()
+    {
+        string username;
+        string password;
+
+    wrongCredentials:
+
+        cout << "Enter your username: ";
+        cin >> username;
+        cout << "Enter your password: ";
+        cin >> password;
+
+        ifstream fin;
+        fin.open(fileName, ios::in);
+
+        string data;
+        int i;
+        while (!fin.eof())
+        {
+            i = 0;
+            getline(fin, data, '\n');
+
+            AcademicOfficer academicOfficer = takeInputFromString(data);
+            if (academicOfficer.username == username && academicOfficer.password == password)
+            {
+                this->name = academicOfficer.name;
+                this->username = academicOfficer.username;
+                this->password = academicOfficer.password;
+
+                cout << "User successfully logged in.\n";
+            }
+        }
+
+        cout << "No account exists with those credentials, try again.\n";
+        goto wrongCredentials;
+    }
+
+    bool checkDuplicate(string username)
+    {
+        ifstream fin;
+        fin.open(fileName, ios::in);
+
+        string data;
+        string tempUsername;
+        int i;
+        while (!fin.eof())
+        {
+            i = 0;
+            data = "";
+            getline(fin, data, '\n');
+
+            tempUsername = "";
+            for (; i < data.length(); i++)
+            {
+                if (data[i] == '~')
+                {
+                    break;
+                }
+                else
+                {
+                    tempUsername += data[i];
+                }
+            }
+
+            // check if username is already used or not
+            if (tempUsername == username)
+            {
+                cout << "An account already exists with that username, please try again.\n";
+                fin.close();
+                return true;
+            }
+
+            // traversing to next line
+            for (; i < data.length(); i++)
+            {
+                if (data[i] == '\n')
+                {
+                    break;
+                }
+            }
+
+            i++;
+        }
 
         fin.close();
+        return false;
     }
 };
