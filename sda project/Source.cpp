@@ -4,6 +4,7 @@
 #include "Teacher.cpp"
 #include <string>
 #include "Program.cpp"
+#include "Evaluations.cpp"
 using namespace std;
 
 string programsFile = "Programs.txt";
@@ -192,12 +193,45 @@ int main()
 
             if (loginT(username, password))
             {
+                int c = 0;
                 cout << "You are now logged in \n \n";
                 cout << "Choose from the four options listed \n \n";
                 cout << "Press 1 to Add covered topics against CLOs\n"
                      << "Press 2 to Make Evaluations \n"
                      << "Press 3 to Check if CLO tested \n"
                      << "Press 4 to Check all CLOs are tested \n";
+                cin >> c;
+                if (c == 1)
+                {
+                    //
+                }
+                if (c == 2)
+                {
+
+                    string typeOfEvaluation;
+                    cout << "Choose from either Quiz, Assignment or Exam to make an Evaluation \n";
+                    
+                retry:
+                    cin >> typeOfEvaluation;
+
+                    if (typeOfEvaluation == "Quiz" || typeOfEvaluation == "quiz")
+                    {
+                        Evaluation obj(typeOfEvaluation);
+                    }
+                    else if (typeOfEvaluation == "Assignment" || typeOfEvaluation == "assignment")
+                    {
+                        Evaluation obj(typeOfEvaluation);
+                    }
+                    else if (typeOfEvaluation == "Exam" || typeOfEvaluation == "exam")
+                    {
+                        Evaluation obj(typeOfEvaluation);
+                    }
+                    else
+                    {
+                        cout << "You typed in the incorrect option. Retry again. \n";
+                        goto retry;
+                    }
+                }
             }
             else
             {
