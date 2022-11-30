@@ -48,6 +48,7 @@ bool loginT(string username, string password)
 
 void loadDataFromFile()
 {
+    // load programs
     ifstream fin;
 
     fin.open(programsFile, ios::in);
@@ -61,6 +62,13 @@ void loadDataFromFile()
         program.print();
         programs.push_back(program);
     }
+
+    fin.close();
+
+    // load academic officers
+    
+
+    // load teachers
 }
 
 int main()
