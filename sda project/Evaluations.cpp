@@ -4,6 +4,8 @@ using namespace std;
 
 class Evaluation
 {
+
 public:
+    string typeOfEvaluation;
     void checkClOhasTested(CLO id) {}
 };
