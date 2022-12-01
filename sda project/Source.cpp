@@ -56,50 +56,54 @@ int main()
 {
     loadDataFromFile();
 
-    int a = 0;
-    int b = 0;
+    int chooseUserType = 0;
+    int chooseLogin = 0;
     string name = "";
     string username, password, confirmPassword;
-    User user;
+    User *user;
 
-    cout << "Enter 1 for academic officer or 2 for teacher: ";
-
-    // Academic Officer
-    cin >> a;
-    if (a == 1)
+    cout << "Enter 1 for Academic Officer or 2 for Teacher: ";
+    cin >> chooseUserType;
+    if (chooseUserType == 1)
     {
-        AcademicOfficer academicOfficer;
-        cout << "Enter 1 to signup or 2 for login: ";
-        cin >> b;
-        if (b == 1)
-        {
-            academicOfficer.takeInput();
-        }
-        // Academic Officer Login
-        else if (b == 2)
-        {
-            academicOfficer.login();
+        user = new AcademicOfficer();
 
-            int a = 0;
+        cout << "Enter 1 to Signup or 2 for Login: ";
+        cin >> chooseLogin;
+        if (chooseLogin == 1)
+        {
+            user->takeUserInput();
+            goto aoAdminPanel;
+        }
+        else if (chooseLogin == 2)
+        {
+            user->login();
             cout << "You are now logged in. \n\n";
+
         aoAdminPanel:
+
+            int chooseUserType = 0;
             cout << "Choose from the four options listed below: \n\n";
             cout << "Enter 1 to Manage Programs.\n"
                  << "Enter 2 to Manage PLOs.\n"
                  << "Enter 3 to Manage Courses.\n"
                  << "Enter 4 to CLOs.\n\n";
-            cin >> a;
+
+            cin >> chooseUserType;
             cout << "\n";
-            if (a == 1)
+            if (chooseUserType == 1)
             {
-                int b = 0;
+
+            manageProgram:
+
+                int chooseLogin = 0;
                 cout << "You chose to Manage Programs.\n\n";
                 cout << "Enter 1 to Add Program.\n"
                      << "Enter 2 to Delete Program.\n"
                      << "Enter 3 to Update Program.\n\n";
-                cin >> b;
+                cin >> chooseLogin;
                 cout << "\n";
-                if (b == 1)
+                if (chooseLogin == 1)
                 {
                     cout << "You chose to Add Program.\n\n";
                     Program program = Program();
@@ -110,47 +114,199 @@ int main()
 
                     goto aoAdminPanel;
                 }
-                else if (b == 2)
+                else if (chooseLogin == 2)
                 {
-                    // delete program
+                    int deleteLine;
+
+                    cout << "You chose to Delete Program.\n\n";
+
+                    cout << "Here are a list of all programs: \n\n";
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        cout << "Program " << i + 1 << endl;
+                        programs[i].print();
+                    }
+
+                    cout << "Enter which program you want to delete (enter a number): ";
+                    cin >> deleteLine;
+
+                    deleteLine--;
+
+                    programs.erase(programs.begin() + deleteLine);
+
+                    fstream fout;
+                    fout.open(programsFile, std::ios_base::trunc);
+
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        programs[i].writeToFile();
+                    }
+
+                    fout.close();
+
+                    goto aoAdminPanel;
                 }
-                else if (b == 3)
+                else if (chooseLogin == 3)
                 {
-                    // update program
-                    // update PLO
+                    int updateLine;
+
+                    cout << "You chose to Update Program.\n\n";
+
+                    cout << "Here are a list of all programs: \n\n";
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        cout << "Program " << i + 1 << endl;
+                        programs[i].print();
+                    }
+
+                    cout << "Enter which program you want to update (enter a number): ";
+                    cin >> updateLine;
+
+                    programs[updateLine - 1].takeInput();
+
+                    fstream fout;
+                    fout.open(programsFile, std::ios_base::trunc);
+
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        programs[i].writeToFile();
+                    }
+
+                    fout.close();
+
+                    goto aoAdminPanel;
                 }
                 else
                 {
-                    cout << "Incorrect number entered";
+                    cout << "Incorrect Number Entered.\n";
+                    goto manageProgram;
                 }
             }
-            else if (a == 2)
+            else if (chooseUserType == 2)
             {
                 // check satisfied PLO
             }
-            else if (a == 3)
+            else if (chooseUserType == 3)
             {
-                int b = 0;
+                int chooseLogin = 0;
                 cout << "You selected Manage Courses \n \n"
                      << "Press 1 to Add Courses \n"
                      << "Press 2 to Delete Courses \n"
                      << "Press 3 to Update Courses \n"
                      << "Press 4 to List Courses for PLO \n";
-                cin >> b;
-                if (b == 1)
+
+                cin >> chooseLogin;
+                if (chooseLogin == 1)
                 {
-                    // add course
+                    cout << "You chose to Add Course.\n\n";
+
+                    cout << "Here are a list of all programs: \n\n";
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        cout << "Program " << i + 1 << endl;
+                        programs[i].print();
+                    }
+
+                    int updateLine;
+                    cout << "Enter which program you want to add a course into (enter a number): ";
+                    cin >> updateLine;
+
+                    Course course;
+                    course.takeInput();
+
+                    programs[updateLine - 1].addCourse(course);
+
+                    fstream fout;
+                    fout.open(programsFile, std::ios_base::trunc);
+
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        programs[i].writeToFile();
+                    }
+
+                    fout.close();
                 }
-                else if (b == 2)
+                else if (chooseLogin == 2)
                 {
-                    // delete course
+                    int deleteProgram;
+
+                    cout << "You chose to Delete Course.\n\n";
+
+                    cout << "Here are a list of all programs: \n\n";
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        cout << "Program " << i + 1 << endl;
+                        programs[i].print();
+                    }
+
+                    cout << "Enter which program you want to delete a course from (enter a number): ";
+                    cin >> deleteProgram;
+
+                    deleteProgram--;
+
+                    programs[deleteProgram].print();
+
+                    int deleteCourse;
+                    cout << "Enter which course you want to delete (enter a number): ";
+                    cin >> deleteCourse;
+
+                    deleteCourse--;
+
+                    programs[deleteProgram].deleteCourse(deleteCourse);
+
+                    fstream fout;
+                    fout.open(programsFile, std::ios_base::trunc);
+
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        programs[i].writeToFile();
+                    }
+
+                    fout.close();
+
+                    goto aoAdminPanel;
                 }
-                else if (b == 3)
+                else if (chooseLogin == 3)
                 {
-                    // update courses
-                    // update clos
+                    int updateProgram;
+
+                    cout << "You chose to Update Course.\n\n";
+
+                    cout << "Here are a list of all programs: \n\n";
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        cout << "Program " << i + 1 << endl;
+                        programs[i].print();
+                    }
+
+                    cout << "Enter which program you want to update a course from (enter a number): ";
+                    cin >> updateProgram;
+
+                    updateProgram--;
+
+                    programs[updateProgram].print();
+
+                    int updateCourse;
+                    cout << "Enter which course you want to update (enter a number): ";
+                    cin >> updateCourse;
+
+                    updateCourse--;
+
+                    programs[updateProgram].updateCourse(updateCourse);
+
+                    fstream fout;
+                    fout.open(programsFile, std::ios_base::trunc);
+
+                    for (int i = 0; i < programs.size(); i++)
+                    {
+                        programs[i].writeToFile();
+                    }
+
+                    fout.close();
+
+                    goto aoAdminPanel;
                 }
-                else if (b == 4)
+                else if (chooseLogin == 4)
                 {
                     // list courses for PLO
                 }
@@ -168,11 +324,11 @@ int main()
         }
     }
     // Teacher Admin Panel
-    else if (a == 2)
+    else if (chooseUserType == 2)
     {
         cout << "Press 1 to signup or 2 to login \n";
-        cin >> b;
-        if (b == 1)
+        cin >> chooseLogin;
+        if (chooseLogin == 1)
         {
             cout << "what's your name? \n";
             cin >> name;
@@ -180,10 +336,10 @@ int main()
             cin >> username;
             cout << "enter your password \n";
             cin >> password;
-            user = Teacher(name, username, password);
+            // user = new Teacher(name, username, password);
         }
         // Teacher Login
-        else if (b == 2)
+        else if (chooseLogin == 2)
         {
             cout << "Enter your username \n";
             cin >> username;

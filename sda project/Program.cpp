@@ -21,11 +21,13 @@ protected:
     };
 
 public:
-    Program() {
+    Program()
+    {
         programName = "";
     }
 
-    void takeInput() {
+    void takeInput()
+    {
         string programName = "";
         cout << "Please enter new program name: ";
         cin.clear();
@@ -61,17 +63,21 @@ public:
         this->courses = courses;
     }
 
-    void takeInputFromString(string data) {
+    void takeInputFromString(string data)
+    {
         // save program name from string
         int i = 0;
 
         // traverse till it finds plo length
         string programName = "";
-        for (; i < data.length(); i++) {
-            if (data[i] >= '0' && data[i] <= '9') {
+        for (; i < data.length(); i++)
+        {
+            if (data[i] >= '0' && data[i] <= '9')
+            {
                 break;
             }
-            else {
+            else
+            {
                 programName += data[i];
             }
         }
@@ -89,7 +95,8 @@ public:
             plos.push_back(PLO(i, data));
 
             // skipping the - if more than 1 plo
-            if (sizeOfPlos > 1) {
+            if (sizeOfPlos > 1)
+            {
                 i++;
             }
         }
@@ -110,7 +117,23 @@ public:
         this->courses = courses;
     }
 
-    void writeToFile() {
+    void updateCourse(int position)
+    {
+        courses[position].takeInput();
+    }
+
+    void addCourse(Course course)
+    {
+        courses.push_back(course);
+    }
+
+    void deleteCourse(int position)
+    {
+        courses.erase(courses.begin() + position);
+    }
+
+    void writeToFile()
+    {
 
         // writing in this format
         // programName<number of plos>plo1-plo2...<number of courses>course1<number of clos>$<number of topics>topic1-topic2...clo1 outcome
@@ -125,9 +148,11 @@ public:
 
         fout << programName << plosSize;
 
-        for (int i = 0; i < plosSize; i++) {
+        for (int i = 0; i < plosSize; i++)
+        {
             plos[i].writeToFile(fout);
-            if (plosSize > 1) {
+            if (plosSize > 1)
+            {
                 fout << "-";
             }
         }
@@ -136,9 +161,11 @@ public:
 
         fout << coursesSize;
 
-        for (int i = 0; i < plosSize; i++) {
+        for (int i = 0; i < plosSize; i++)
+        {
             courses[i].writeToFile(fout);
-            if (coursesSize > 1) {
+            if (coursesSize > 1)
+            {
                 fout << "-";
             }
         }
@@ -167,7 +194,8 @@ public:
 
     void listAllCourses() {}
 
-    string getProgramName() {
+    string getProgramName()
+    {
         return programName;
     }
 };

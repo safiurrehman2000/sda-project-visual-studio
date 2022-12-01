@@ -19,7 +19,7 @@ public:
         password = "";
     }
 
-    void takeInput()
+    void takeUserInput()
     {
         string name = "";
         cout << "Please enter your full name: ";
@@ -46,13 +46,14 @@ public:
 
         if (password == confirmPassword)
         {
-            if (!checkDuplicate(username))
+            if (checkDuplicate(username) == false)
             {
                 this->name = name;
                 this->username = username;
                 this->password = password;
+
                 writeToFile();
-                cout << "User successfully created, you are now logged in. \n";
+                cout << "User successfully created, you are now logged in.\n";
             }
             else
             {
@@ -66,10 +67,38 @@ public:
         }
     }
 
-    AcademicOfficer takeInputFromString(string data)
+    void setName(string name)
     {
-        AcademicOfficer academicOfficer;
+        this->name = name;
+    }
 
+    void setUsername(string username)
+    {
+        this->username = username;
+    }
+
+    void setPassword(string password)
+    {
+        this->password = password;
+    }
+
+    string getName()
+    {
+        return name;
+    }
+
+    string getUsername()
+    {
+        return username;
+    }
+
+    string getPassword()
+    {
+        return password;
+    }
+
+    void takeInputFromString(string data)
+    {
         string name = "";
         int i = 0;
         for (; i < data.length(); i++)
@@ -110,15 +139,13 @@ public:
             }
             else
             {
-                username += data[i];
+                password += data[i];
             }
         }
 
-        academicOfficer.name = name;
-        academicOfficer.username = username;
-        academicOfficer.password = password;
-
-        return academicOfficer;
+        this->name = name;
+        this->username = username;
+        this->password = password;
     }
 
     void writeToFile()
@@ -153,14 +180,17 @@ public:
             i = 0;
             getline(fin, data, '\n');
 
-            AcademicOfficer academicOfficer = takeInputFromString(data);
-            if (academicOfficer.username == username && academicOfficer.password == password)
+            AcademicOfficer academicOfficer;
+            academicOfficer.takeInputFromString(data);
+
+            if (academicOfficer.getUsername() == username && academicOfficer.getPassword() == password)
             {
-                this->name = academicOfficer.name;
-                this->username = academicOfficer.username;
-                this->password = academicOfficer.password;
+                this->name = academicOfficer.getName();
+                this->username = academicOfficer.getUsername();
+                this->password = academicOfficer.getPassword();
 
                 cout << "User successfully logged in.\n";
+                return;
             }
         }
 
@@ -181,6 +211,20 @@ public:
             i = 0;
             data = "";
             getline(fin, data, '\n');
+
+            for (; i < data.length(); i++)
+            {
+                if (data[i] == '~')
+                {
+                    break;
+                }
+                else
+                {
+                    tempUsername += data[i];
+                }
+            }
+
+            i++;
 
             tempUsername = "";
             for (; i < data.length(); i++)

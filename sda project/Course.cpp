@@ -26,6 +26,12 @@ protected:
 public:
     Course()
     {
+        title = "";
+        courseCode = "";
+    }
+
+    void takeInput()
+    {
         string title = "";
         cout << "Enter course title: ";
         cin.clear();
@@ -60,16 +66,20 @@ public:
         this->clos = clos;
     }
 
-    Course(int& i, string data) {
+    Course(int &i, string data)
+    {
         // constructing course from string
 
         // traverse till it finds _
         string title = "";
-        for (; i < data.length(); i++) {
-            if (data[i] == '_') {
+        for (; i < data.length(); i++)
+        {
+            if (data[i] == '_')
+            {
                 break;
             }
-            else {
+            else
+            {
                 title += data[i];
             }
         }
@@ -81,11 +91,14 @@ public:
 
         // traverse till it finds - or integer
         string courseCode = "";
-        for (; i < data.length(); i++) {
-            if ((data[i] == '-') || (data[i] == '#')) {
+        for (; i < data.length(); i++)
+        {
+            if ((data[i] == '-') || (data[i] == '#'))
+            {
                 break;
             }
-            else {
+            else
+            {
                 courseCode += data[i];
             }
         }
@@ -104,28 +117,31 @@ public:
             clos.push_back(CLO(i, data));
 
             // skipping the $ if more than 1 clo
-            if (sizeOfClos > 1) {
+            if (sizeOfClos > 1)
+            {
                 i++;
             }
         }
         this->clos = clos;
     }
 
-    void writeToFile(std::ofstream& fout) {
+    void writeToFile(std::ofstream &fout)
+    {
         fout << title << "_" << courseCode << "#";
 
         int closSize = clos.size();
 
         fout << closSize;
 
-        for (int i = 0; i < closSize; i++) {
+        for (int i = 0; i < closSize; i++)
+        {
             clos[i].writeToFile(fout);
-            if (closSize > 1) {
+            if (closSize > 1)
+            {
                 fout << "-";
             }
         }
     }
-
 
     void print()
     {
