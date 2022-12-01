@@ -9,7 +9,6 @@ using namespace std;
 class Program
 {
 private:
-    const string fileName = "Programs.txt";
     string programName;
     vector<PLO> plos;
     vector<Course> courses;
@@ -140,7 +139,7 @@ public:
 
         ofstream fout;
 
-        fout.open(fileName, ios::app);
+        fout.open("Programs.txt", ios::app);
 
         cout << endl;
 

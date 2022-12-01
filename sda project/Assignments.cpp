@@ -4,7 +4,7 @@
 #include "Questions.cpp"
 using namespace std;
 
-class Assignments : public Evaluation
+class Assignment : public Evaluation
 {
 private:
     Questions questions;
