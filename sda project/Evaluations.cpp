@@ -7,9 +7,5 @@ class Evaluation
 
 public:
     string typeOfEvaluation;
-    Evaluation(string typeOfEvaluation)
-    {
-        
-    }
     void checkClOhasTested(CLO id) {}
 };

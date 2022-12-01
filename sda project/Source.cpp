@@ -5,6 +5,10 @@
 #include <string>
 #include "Program.cpp"
 #include "Evaluations.cpp"
+#include "Exams.cpp"
+#include "Quizzes.cpp"
+#include "Assignments.cpp"
+
 using namespace std;
 
 string programsFile = "Programs.txt";
@@ -210,21 +214,21 @@ int main()
 
                     string typeOfEvaluation;
                     cout << "Choose from either Quiz, Assignment or Exam to make an Evaluation \n";
-                    
+
                 retry:
                     cin >> typeOfEvaluation;
 
                     if (typeOfEvaluation == "Quiz" || typeOfEvaluation == "quiz")
                     {
-                        Evaluation obj(typeOfEvaluation);
+                        Evaluation *evaluation = new Quiz();
                     }
                     else if (typeOfEvaluation == "Assignment" || typeOfEvaluation == "assignment")
                     {
-                        Evaluation obj(typeOfEvaluation);
+                        Evaluation *evaluation = new Assignment();
                     }
                     else if (typeOfEvaluation == "Exam" || typeOfEvaluation == "exam")
                     {
-                        Evaluation obj(typeOfEvaluation);
+                        Evaluation *evaluation = new Exam();
                     }
                     else
                     {
