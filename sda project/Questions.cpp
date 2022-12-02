@@ -5,5 +5,5 @@ using namespace std;
 
 class Questions
 {
-    CLO clo;
+    string question;
 };

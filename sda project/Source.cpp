@@ -103,9 +103,7 @@ int main()
 
                 int chooseLogin = 0;
                 cout << "You chose to Manage Programs.\n\n";
-                cout << "Enter 1 to Add Program.\n"
-                     << "Enter 2 to Delete Program.\n"
-                     << "Enter 3 to Update Program.\n\n";
+                cout << "Enter 1 t3e Program.\n\n";
                 cin >> chooseLogin;
                 cout << "\n";
                 if (chooseLogin == 1)
@@ -363,7 +361,21 @@ int main()
                 cin >> c;
                 if (c == 1)
                 {
-                    //
+                    string inputCLO = "";
+                    cout << "Enter the CLO you want to add topics to \n";
+                    cin >> inputCLO;
+
+                    cout << "CLO Found.\n";
+
+                    cin.ignore();
+                    cin.clear();
+                    cin.sync();
+
+                    string topic = "";
+                    cout << "Enter the topic: ";
+                    cin >> topic;
+
+                    cout << "Topic added to the CLO.\n";
                 }
                 if (c == 2)
                 {
